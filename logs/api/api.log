@@ -1,0 +1,3 @@
+[2018-03-04 20:26:52] - [INFO    ] - [api     ] - [INFO Task Finished: ]
+[2018-03-04 20:26:52] - [WARNING ] - [api     ] - [DEBUG Task Finished: ]
+[2018-03-04 20:26:52] - [CRITICAL] - [api     ] - [critical Task Finished:   (loc test_log:<module>:25)  (stk )]

@@ -1,0 +1,6 @@
+[2018-03-04 20:25:47] - [INFO    ] - [task    ] - [INFO Task Finished: ]
+[2018-03-04 20:25:47] - [WARNING ] - [task    ] - [DEBUG Task Finished: ]
+[2018-03-04 20:25:47] - [CRITICAL] - [task    ] - [critical Task Finished:   (loc test_log:<module>:8)  (stk )]
+[2018-03-04 20:26:52] - [INFO    ] - [task    ] - [INFO Task Finished: ]
+[2018-03-04 20:26:52] - [WARNING ] - [task    ] - [DEBUG Task Finished: ]
+[2018-03-04 20:26:52] - [CRITICAL] - [task    ] - [critical Task Finished:   (loc test_log:<module>:8)  (stk )]
