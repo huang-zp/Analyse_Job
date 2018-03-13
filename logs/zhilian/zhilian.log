@@ -1582,3 +1582,7 @@
 [2018-03-13 16:05:13] - [WARNING ] - [task_zhilian] - [http://jobs.zhaopin.com/CC521246823J00076355303.htm 'NoneType' object has no attribute 'get_text'] - [__init__] - [48]
 [2018-03-13 16:05:23] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000940623J90000016000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
 [2018-03-13 16:05:29] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000841076J90000392000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
+[2018-03-13 16:07:05] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000904843J90000207000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
+[2018-03-13 16:07:34] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000904843J90000205000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
+[2018-03-13 16:08:15] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000904843J90000207000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
+[2018-03-13 16:08:20] - [WARNING ] - [task_zhilian] - [http://xiaoyuan.zhaopin.com/job/CC000904843J90000205000 'NoneType' object has no attribute 'h1'] - [__init__] - [48]
