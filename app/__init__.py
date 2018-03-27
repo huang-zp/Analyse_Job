@@ -6,10 +6,7 @@ import sys
 from logging.handlers import TimedRotatingFileHandler
 
 from flask import Flask, jsonify, request, g, json
-# from app.controllers.infomations import infomation
-# from app.controllers.vulners import vulner
-# from app.controllers.threats import threat
-
+from app.controllers.lagou import lagou
 project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_path not in sys.path:
     sys.path.insert(0, project_path)
@@ -23,7 +20,7 @@ def create_app():
     # Register components
     # app.register_blueprint(infomation)
     # app.register_blueprint(vulner)
-    # app.register_blueprint(threat)
+    app.register_blueprint(lagou)
 
     class NonASCIIJsonEncoder(json.JSONEncoder):
         def __init__(self, **kwargs):

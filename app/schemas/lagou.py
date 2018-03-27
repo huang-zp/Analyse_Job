@@ -6,7 +6,7 @@ from app.engines import db
 from app.models import ZlJob
 from app.schemas import length_validator, OneOf
 
-query_zhilian_schema = {
+query_lagou_schema = {
     'start': fields.Int(missing=0),
     'length': fields.Int(missing=15, validate=length_validator),
     'order': fields.Nested({
