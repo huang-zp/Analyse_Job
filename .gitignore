@@ -107,4 +107,4 @@ venv.bak/
 .mypy_cache/
 .idea/workspace.xml
 
-constant.py
+product.py

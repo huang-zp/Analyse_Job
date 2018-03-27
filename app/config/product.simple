@@ -5,5 +5,5 @@ from .default import Config
 class ProductionConfig(Config):
     # App config
     DEBUG = False
-
+    SQLALCHEMY_DATABASE_URI = "postgres://postgres:postgres@127.0.0.1/analyse_job"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
