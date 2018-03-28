@@ -1,0 +1,411 @@
+{% extends "base.html" %}
+{% block page_css %}
+
+    <style type="text/css">
+        .highcharts-container {
+            margin: 0 auto;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% block page_wrapper %}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Panels and Wells</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Default Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-python"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Primary Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Java"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Success Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-C++"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Info Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-PHP"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            Warning Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-数据挖掘"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Danger Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-搜索算法"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            Green Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-精准推荐"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            Yellow Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-C"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            Red Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-C#"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Default Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-全栈工程师"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Primary Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-.NET"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Success Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Hadoop"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Info Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Delphi"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            Warning Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-VB"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Danger Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Perl"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            Green Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Ruby"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            Yellow Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Node.js"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            Red Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Go"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Info Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-ASP"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            Warning Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Shell"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Danger Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-后端开发其它"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Default Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-HTML5"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Primary Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Android"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Success Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-iOS"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Info Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-WP"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            Warning Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-移动开发其它"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Danger Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-web前端"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            Green Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-Flash"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            Yellow Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-html5"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            Red Panel
+                        </div>
+                        <div class="panel-body">
+                                <div id="trend-job-count-JavaScript"></div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+
+            </div>
+
+        </div>
+
+{% endblock %}
+
+{% block static_js %}
+    {{ super() }}
+    <script>
+        var data = {{ data }};
+    </script>
+    <script src="{{ url_for('static', filename='highcharts/code/highcharts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/series-label.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/exporting.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/data/trend_job_count.js') }}" type="text/javascript"></script>
+{% endblock %}

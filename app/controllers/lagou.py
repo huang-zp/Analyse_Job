@@ -33,6 +33,27 @@ def index():
     return render_template('index.html', job_counts=job_counts, data=data)
 
 
+@lagou.route('/trend/job/count')
+def job_count():
+    job_name = [['Java','C++','PHP'],['数据挖掘','搜索算法','精准推荐'],['C','C#','全栈工程师'],['.NET','Hadoop','Python'],['Delphi','VB','Perl'],['Ruby','Node.js','Go'],['ASP','Shell','后端开发其它'],['HTML5','Android','iOS'],['WP','移动开发其它','web前端'],['Flash','html5','JavaScript']]
+    return render_template('job_count_trend.html', job_name=job_name)
+
+
+@lagou.route('/trend/job/salary')
+def job_salary():
+    return render_template('job_count_trend.html')
+
+
+@lagou.route('/trend/area/count')
+def area_count():
+    return render_template('job_count_trend.html')
+
+
+@lagou.route('/trend/area/salary')
+def area_salary():
+    return render_template('job_count_trend.html')
+
+
 
 
 

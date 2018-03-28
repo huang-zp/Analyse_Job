@@ -28,7 +28,12 @@
         <link href="{{ url_for('static', filename='dist/css/sb-admin-2.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='vendor/morrisjs/morris.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
     {% endblock %}
+
+{% block page_css %}
+
+{% endblock %}
 
 </head>
 
@@ -275,22 +280,22 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+                            <a href="{{ url_for('lagou.index') }}"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 趋势分析<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">职位数量趋势</a>
+                                    <a href="{{ url_for('lagou.job_count') }}">职位数量趋势</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">职位薪水趋势</a>
+                                    <a href="{{ url_for('lagou.job_salary') }}">职位薪水趋势</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">地区职位趋势</a>
+                                    <a href="{{ url_for('lagou.area_count') }}">地区职位趋势</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">地区薪水趋势</a>
+                                    <a href="{{ url_for('lagou.area_salary') }}">地区薪水趋势</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
