@@ -59,4 +59,7 @@ def data_lagou():
     return render_template('data_lagou.html')
 
 
+@lagou.route('/job/type')
+def job_type():
+    return render_template('job_type.html')
 
