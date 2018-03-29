@@ -54,6 +54,9 @@ def area_salary():
     return render_template('job_count_trend.html')
 
 
+@lagou.route('/data/lagou')
+def data_lagou():
+    return render_template('data_lagou.html')
 
 
 
