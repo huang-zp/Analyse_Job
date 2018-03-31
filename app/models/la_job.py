@@ -11,7 +11,7 @@ class Job(Base, BaseColumns):
     companyId = Column(String(50), server_default='')
     score = Column(String(50), server_default='')
     positionId = Column(String(50), server_default='')
-    positionName = Column(String(120), server_default='')
+    positionName = Column(String(120), server_default='', index=True)
     createTime = Column(String(50), server_default='')
     positionAdvantage = Column(Text, server_default='')
     salary = Column(String(50), server_default='', index=True)
@@ -57,6 +57,7 @@ class Job(Base, BaseColumns):
 
     job_type = Column(String(50), server_default='')
     time_sort = Column(String(50), server_default=datetime.now().strftime('%Y-%m-%d'), index=True)
+    avg_salary = Column(Integer(), index=True)
 
 
 

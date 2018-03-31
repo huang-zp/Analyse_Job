@@ -73,7 +73,14 @@ def data_lagou():
 
 @lagou.route('/job/type')
 def job_type():
-    return render_template('job_type.html')
+    job_names = ['Python','Java','C++','PHP','数据挖掘','搜索算法','精准推荐','C','C#','.NET','Hadoop','Delphi','Ruby','Node.js','Go','ASP','后端开发其它','HTML5','Android','iOS','移动开发其它','web前端','Flash','JavaScript']
+
+    for i, job_name in enumerate(job_names):
+        job_type=db.session.query(Job.positionName, func.count(), func.avg(Job.avg_salary)).filter_by(job_type=job_name)\
+            .group_by(Job.positionName).order_by(func.count().desc()).limit(10).all()
+        job_names[i] = {job_name : job_type,}
+
+    return render_template('job_type.html',job_names=job_names)
 
 
 @lagou.route('/ave/salary')
