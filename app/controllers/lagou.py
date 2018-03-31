@@ -59,7 +59,16 @@ def area_salary():
 
 @lagou.route('/data/lagou')
 def data_lagou():
-    return render_template('data_lagou.html')
+    jobs = db.session.query(Job).limit(100).all()
+    python_jobs = db.session.query(Job).filter_by(job_type = 'Python').order_by(Job.salary).limit(3).all()
+    java_jobs = db.session.query(Job).filter_by(job_type = 'Java').order_by(Job.salary).limit(3).all()
+    c_plus_jobs = db.session.query(Job).filter_by(job_type = 'C++').order_by(Job.salary).limit(3).all()
+    c_jobs = db.session.query(Job).filter_by(job_type = 'C').order_by(Job.salary).limit(3).all()
+    php_jobs = db.session.query(Job).filter_by(job_type = 'PHP').order_by(Job.salary).limit(3).all()
+    c_sharp_jobs = db.session.query(Job).filter_by(job_type='C#').order_by(Job.salary).limit(3).all()
+
+    return render_template('data_lagou.html', jobs=jobs, python_jobs=python_jobs,java_jobs=java_jobs,
+                           c_plus_jobs=c_plus_jobs,c_jobs=c_jobs,php_jobs=php_jobs,c_sharp_jobs=c_sharp_jobs)
 
 
 @lagou.route('/job/type')
