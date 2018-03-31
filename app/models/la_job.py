@@ -2,6 +2,7 @@ import os
 from sqlalchemy import Column, DateTime, Integer, Text, ARRAY
 from sqlalchemy import String, JSON
 from .base import Base, BaseColumns
+from datetime import datetime
 
 
 class Job(Base, BaseColumns):
@@ -13,11 +14,11 @@ class Job(Base, BaseColumns):
     positionName = Column(String(120), server_default='')
     createTime = Column(String(50), server_default='')
     positionAdvantage = Column(Text, server_default='')
-    salary = Column(String(50), server_default='')
+    salary = Column(String(50), server_default='', index=True)
     approve = Column(String(50), server_default='')
     workYear = Column(String(50), server_default='')
     education = Column(String(50), server_default='')
-    city = Column(String(50), server_default='')
+    city = Column(String(50), server_default='', index=True)
     companyLogo = Column(String(120), server_default='')
     jobNature = Column(String(50), server_default='')
     industryField = Column(String(50), server_default='')
@@ -55,6 +56,7 @@ class Job(Base, BaseColumns):
     linestaion = Column(Text, server_default='')
 
     job_type = Column(String(50), server_default='')
+    time_sort = Column(String(50), server_default=datetime.now().strftime('%Y-%m-%d'), index=True)
 
 
 
