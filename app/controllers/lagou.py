@@ -35,23 +35,26 @@ def index():
 
 @lagou.route('/trend/job/count')
 def job_count():
-    job_name = [['Java','C++','PHP'],['数据挖掘','搜索算法','精准推荐'],['C','C#','全栈工程师'],['.NET','Hadoop','Python'],['Delphi','VB','Perl'],['Ruby','Node.js','Go'],['ASP','Shell','后端开发其它'],['HTML5','Android','iOS'],['WP','移动开发其它','web前端'],['Flash','html5','JavaScript']]
-    return render_template('job_count_trend.html', job_name=job_name)
+    job_names = ['Python','Java','C++','PHP','数据挖掘','搜索算法','精准推荐','C','C#','全栈工程师','.NET','Hadoop','Delphi','VB','Perl','Ruby','Node.js','Go','ASP','Shell','后端开发其它','HTML5','Android','iOS','WP','移动开发其它','web前端','Flash','html5','JavaScript']
+    return render_template('job_count_trend.html', job_names=job_names)
 
 
 @lagou.route('/trend/job/salary')
 def job_salary():
-    return render_template('job_count_trend.html')
+    job_names = ['Python','Java','C++','PHP','数据挖掘','搜索算法','精准推荐','C','C#','全栈工程师','.NET','Hadoop','Delphi','VB','Perl','Ruby','Node.js','Go','ASP','Shell','后端开发其它','HTML5','Android','iOS','WP','移动开发其它','web前端','Flash','html5','JavaScript']
+    return render_template('job_salary_trend.html', job_names=job_names)
 
 
 @lagou.route('/trend/area/count')
 def area_count():
-    return render_template('job_count_trend.html')
+    city_names = ['北京','上海','深圳','广州','杭州','成都','南京','武汉','西安','厦门','长沙','苏州','天津','重庆','郑州','青岛','合肥','福州','济南','大连','珠海','无锡','佛山','东莞','宁波','常州','沈阳','石家庄','昆明','南昌','南宁','哈尔滨','海口','中山','惠州','贵阳','长春','太原','嘉兴','泰安','昆山','烟台','兰州','泉州']
+    return render_template('city_count_trend.html', city_names=city_names)
 
 
 @lagou.route('/trend/area/salary')
 def area_salary():
-    return render_template('job_count_trend.html')
+    city_names = ['北京','上海','深圳','广州','杭州','成都','南京','武汉','西安','厦门','长沙','苏州','天津','重庆','郑州','青岛','合肥','福州','济南','大连','珠海','无锡','佛山','东莞','宁波','常州','沈阳','石家庄','昆明','南昌','南宁','哈尔滨','海口','中山','惠州','贵阳','长春','太原','嘉兴','泰安','昆山','烟台','兰州','泉州']
+    return render_template('city_salary_trend.html', city_names=city_names)
 
 
 @lagou.route('/data/lagou')
@@ -62,4 +65,19 @@ def data_lagou():
 @lagou.route('/job/type')
 def job_type():
     return render_template('job_type.html')
+
+
+@lagou.route('/ave/salary')
+def ave_salary():
+    return render_template('ave_salary.html')
+
+
+@lagou.route('/welfare/level')
+def welfare_level():
+    return render_template('welfare_level.html')
+
+
+@lagou.route('/geo/area')
+def geo_area():
+    return render_template('geo_area.html')
 

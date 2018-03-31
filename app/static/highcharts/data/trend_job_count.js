@@ -1,26 +1,25 @@
-Highcharts.chart('trend-job-count-python', {
+Highcharts.chart('trend-job-count-Python', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -29,7 +28,9 @@ Highcharts.chart('trend-job-count-python', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -43,48 +44,32 @@ Highcharts.chart('trend-job-count-python', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Java', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -93,7 +78,9 @@ Highcharts.chart('trend-job-count-Java', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -107,48 +94,32 @@ Highcharts.chart('trend-job-count-Java', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-C++', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -157,7 +128,9 @@ Highcharts.chart('trend-job-count-C++', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -171,48 +144,32 @@ Highcharts.chart('trend-job-count-C++', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-PHP', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -221,7 +178,9 @@ Highcharts.chart('trend-job-count-PHP', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -235,48 +194,32 @@ Highcharts.chart('trend-job-count-PHP', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-数据挖掘', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -285,7 +228,9 @@ Highcharts.chart('trend-job-count-数据挖掘', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -299,48 +244,32 @@ Highcharts.chart('trend-job-count-数据挖掘', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-搜索算法', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -349,7 +278,9 @@ Highcharts.chart('trend-job-count-搜索算法', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -363,48 +294,32 @@ Highcharts.chart('trend-job-count-搜索算法', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-精准推荐', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -413,7 +328,9 @@ Highcharts.chart('trend-job-count-精准推荐', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -427,48 +344,32 @@ Highcharts.chart('trend-job-count-精准推荐', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-C', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -477,7 +378,9 @@ Highcharts.chart('trend-job-count-C', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -491,48 +394,32 @@ Highcharts.chart('trend-job-count-C', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-C#', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -541,7 +428,9 @@ Highcharts.chart('trend-job-count-C#', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -555,48 +444,32 @@ Highcharts.chart('trend-job-count-C#', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-全栈工程师', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -605,7 +478,9 @@ Highcharts.chart('trend-job-count-全栈工程师', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -619,48 +494,32 @@ Highcharts.chart('trend-job-count-全栈工程师', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-.NET', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -669,7 +528,9 @@ Highcharts.chart('trend-job-count-.NET', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -683,48 +544,32 @@ Highcharts.chart('trend-job-count-.NET', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Hadoop', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -733,7 +578,9 @@ Highcharts.chart('trend-job-count-Hadoop', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -747,48 +594,32 @@ Highcharts.chart('trend-job-count-Hadoop', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Delphi', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -797,7 +628,9 @@ Highcharts.chart('trend-job-count-Delphi', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -811,48 +644,32 @@ Highcharts.chart('trend-job-count-Delphi', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-VB', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -861,7 +678,9 @@ Highcharts.chart('trend-job-count-VB', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -875,48 +694,32 @@ Highcharts.chart('trend-job-count-VB', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Perl', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -925,7 +728,9 @@ Highcharts.chart('trend-job-count-Perl', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -939,48 +744,32 @@ Highcharts.chart('trend-job-count-Perl', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Ruby', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -989,7 +778,9 @@ Highcharts.chart('trend-job-count-Ruby', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1003,48 +794,32 @@ Highcharts.chart('trend-job-count-Ruby', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Node.js', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1053,7 +828,9 @@ Highcharts.chart('trend-job-count-Node.js', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1067,48 +844,32 @@ Highcharts.chart('trend-job-count-Node.js', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Go', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1117,7 +878,9 @@ Highcharts.chart('trend-job-count-Go', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1131,48 +894,32 @@ Highcharts.chart('trend-job-count-Go', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-ASP', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1181,7 +928,9 @@ Highcharts.chart('trend-job-count-ASP', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1195,48 +944,32 @@ Highcharts.chart('trend-job-count-ASP', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Shell', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1245,7 +978,9 @@ Highcharts.chart('trend-job-count-Shell', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1259,48 +994,32 @@ Highcharts.chart('trend-job-count-Shell', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-后端开发其它', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1309,7 +1028,9 @@ Highcharts.chart('trend-job-count-后端开发其它', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1323,48 +1044,32 @@ Highcharts.chart('trend-job-count-后端开发其它', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-HTML5', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1373,7 +1078,9 @@ Highcharts.chart('trend-job-count-HTML5', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1387,48 +1094,32 @@ Highcharts.chart('trend-job-count-HTML5', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Android', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1437,7 +1128,9 @@ Highcharts.chart('trend-job-count-Android', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1451,48 +1144,32 @@ Highcharts.chart('trend-job-count-Android', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-iOS', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1501,7 +1178,9 @@ Highcharts.chart('trend-job-count-iOS', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1515,48 +1194,32 @@ Highcharts.chart('trend-job-count-iOS', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-WP', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1565,7 +1228,9 @@ Highcharts.chart('trend-job-count-WP', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1579,48 +1244,32 @@ Highcharts.chart('trend-job-count-WP', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-移动开发其它', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1629,7 +1278,9 @@ Highcharts.chart('trend-job-count-移动开发其它', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1643,48 +1294,32 @@ Highcharts.chart('trend-job-count-移动开发其它', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-web前端', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1693,7 +1328,9 @@ Highcharts.chart('trend-job-count-web前端', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1707,48 +1344,32 @@ Highcharts.chart('trend-job-count-web前端', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-Flash', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1757,7 +1378,9 @@ Highcharts.chart('trend-job-count-Flash', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1771,48 +1394,32 @@ Highcharts.chart('trend-job-count-Flash', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-html5', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1821,7 +1428,9 @@ Highcharts.chart('trend-job-count-html5', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1835,48 +1444,32 @@ Highcharts.chart('trend-job-count-html5', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
 Highcharts.chart('trend-job-count-JavaScript', {
     chart: {
         type: 'area',
-        height: 150,
-        width:400
+        height: 200,
+        width:500
     },
     title: {
         text: null
     },
-
+    colors: ['#0d233a', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+       '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
     xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        }
+        type: 'datetime',
+        maxZoom: 48 * 3600 * 1000
     },
     yAxis: {
-
+        title: {
+            text: '职位数量（个）'
+        },
         labels: {
             formatter: function () {
-                return this.value / 1000 + 'k';
+                return this.value;
             }
         }
     },
@@ -1885,7 +1478,9 @@ Highcharts.chart('trend-job-count-JavaScript', {
     },
     plotOptions: {
         area: {
-            pointStart: 1940,
+
+            pointStart: Date.UTC(2018, 3, 25),
+            pointInterval: 24 * 3600 * 1000, // one day
             marker: {
                 enabled: false,
                 symbol: 'circle',
@@ -1899,22 +1494,8 @@ Highcharts.chart('trend-job-count-JavaScript', {
         }
     },
     series: [{
-        name: 'USA',
-        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-            27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-            26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-            22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-            10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-            4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-            15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-            33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-            35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000]
+        name: 'Python',
+        data: [200, 184, 199, 231, 157, 231, 190]
     }]
 });
+
