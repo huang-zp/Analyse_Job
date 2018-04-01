@@ -47,7 +47,7 @@
                                             <td>{{ loop.index }}</td>
                                             <td>{{ type[0]}}</td>
                                             <td>{{ type[1] }}</td>
-                                            <td class="center">{{ type[2] }}</td>
+                                            <td class="center">{{ type[2]|int() }}元</td>
 
                                         </tr>
                                         {% if loop.index == 5 %}
