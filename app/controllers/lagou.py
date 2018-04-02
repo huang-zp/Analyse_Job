@@ -29,8 +29,8 @@ def get_info_details(lg_id):
 @lagou.route('/')
 def index():
     data = [22222, 12503, 17177, 19658, 17031, 19931, 17133, 4175]
-    job_counts = db.session.query(func.count(Job.id)).first()[0]
-    return render_template('index.html', job_counts=job_counts, data=data)
+
+    return render_template('index.html', data=data)
 
 
 @lagou.route('/trend/job/count')
