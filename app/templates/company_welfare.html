@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% block page_css %}
+
+    <style type="text/css">
+        .highcharts-container {
+            margin: 0 auto;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block page_wrapper %}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Flot</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            公司福利等级分布表
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            高福利公司
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>公司名称</th>
+                                            <th>包含福利</th>
+                                            <th>福利等级</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>杭州阿里巴巴</td>
+                                            <td>期权 弹性工作 充裕假期 年底多薪</td>
+                                            <td class="center">五级</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            低福利公司
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>公司名称</th>
+                                            <th>包含福利</th>
+                                            <th>福利等级</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td> 百度</td>
+                                            <td>期权</td>
+                                            <td class="center">一级</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+{% endblock %}
+{% block static_js %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='highcharts/code/highcharts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/series-label.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/exporting.js') }}" type="text/javascript"></script>
+
+    <script>
+Highcharts.chart('flot-line-chart', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '公司福利等级分布表'
+            },
+            subtitle: {
+                text: 'Source: AJ平台'
+            },
+            xAxis: {
+                categories: [
+                    '无福利',
+                    '一级',
+                    '二级',
+                    '三级',
+                    '四级',
+                    '五级'
+
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '公司数量 (个)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '福利等级',
+                data: [49.9, 71.5, 106.4, 129, 200, 165]
+
+            }]
+        });
+
+
+
+
+
+    </script>
+{% endblock %}

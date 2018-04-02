@@ -83,17 +83,17 @@ def job_type():
     return render_template('job_type.html',job_names=job_names)
 
 
-@lagou.route('/ave/salary')
-def ave_salary():
-    return render_template('ave_salary.html')
+@lagou.route('/company/welfare')
+def company_welfare():
+    return render_template('company_welfare.html')
 
 
-@lagou.route('/welfare/level')
-def welfare_level():
-    return render_template('welfare_level.html')
+@lagou.route('/company/area')
+def company_area():
+    return render_template('company_area.html')
 
 
-@lagou.route('/geo/area')
-def geo_area():
-    return render_template('geo_area.html')
+@lagou.route('/company/salary')
+def company_salary():
+    return render_template('company_salary.html')
 
