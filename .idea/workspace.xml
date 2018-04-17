@@ -40,20 +40,8 @@
       <file leaf-file-name="index_route.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/index_route.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trend_route.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/trend_route.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+            <state relative-caret-position="198">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -82,6 +70,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="250" selection-start-line="250" selection-start-column="2" selection-end-line="252" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="company_salary.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/company_salary.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,14 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth_route.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="auth_route.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/auth_route.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+            <state relative-caret-position="1136">
+              <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -129,15 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="454">
               <caret line="80" column="14" lean-forward="true" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job_salary_trend.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/job_salary_trend.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="84" column="77" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -198,7 +195,6 @@
         <option value="$PROJECT_DIR$/app/controllers/job_type.py" />
         <option value="$PROJECT_DIR$/app/controllers/message.py" />
         <option value="$PROJECT_DIR$/app/controllers/trend.py" />
-        <option value="$PROJECT_DIR$/app/controllers/index_route.py" />
         <option value="$PROJECT_DIR$/app/models/job_type.py" />
         <option value="$PROJECT_DIR$/app/models/city.py" />
         <option value="$PROJECT_DIR$/app/models/la_job.py" />
@@ -224,7 +220,6 @@
         <option value="$PROJECT_DIR$/app/controllers/datalog_route.py" />
         <option value="$PROJECT_DIR$/app/templates/login.html" />
         <option value="$PROJECT_DIR$/app/templates/register.html" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/utill/filter.py" />
         <option value="$PROJECT_DIR$/app/controllers/message_route.py" />
@@ -239,6 +234,8 @@
         <option value="$PROJECT_DIR$/app/controllers/company_route.py" />
         <option value="$PROJECT_DIR$/app/templates/company_salary.html" />
         <option value="$PROJECT_DIR$/app/controllers/auth_route.py" />
+        <option value="$PROJECT_DIR$/app/controllers/index_route.py" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
       </list>
     </option>
   </component>
@@ -729,13 +726,6 @@
     <entry file="file://$PROJECT_DIR$/app/resources/index.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -839,17 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1084">
-          <caret line="202" column="111" selection-start-line="202" selection-start-column="111" selection-end-line="202" selection-end-column="111" />
-          <folding>
-            <element signature="n#li#6;n#ul#0;n#div#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#7;n#ul#0;n#div#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/data_log.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -932,16 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/index_route.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/company_area.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -992,11 +961,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/auth_route.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        <state relative-caret-position="1136">
+          <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
           <folding>
             <element signature="e#0#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/index_route.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="250" selection-start-line="250" selection-start-column="2" selection-end-line="252" selection-end-column="39" />
         </state>
       </provider>
     </entry>
