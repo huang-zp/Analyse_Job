@@ -10,7 +10,7 @@ from flask import Flask, jsonify, request, g, json
 from app.controllers import company, message, datalog, data, aj, trend, jobtype, auth
 
 from flask_login import LoginManager
-
+from app.cache import cache
 
 project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_path not in sys.path:
@@ -41,6 +41,7 @@ def create_app():
     app.register_blueprint(datalog)
     app.register_blueprint(auth)
 
+    cache.init_app(app)
 
     class NonASCIIJsonEncoder(json.JSONEncoder):
         def __init__(self, **kwargs):
