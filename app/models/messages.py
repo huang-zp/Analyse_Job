@@ -9,5 +9,7 @@ class Message(Base, BaseColumns):
 
     message = Column(Text, server_default='')
 
+    pass_code = Column(Integer(), server_default='0')
+
 
 

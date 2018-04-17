@@ -290,6 +290,8 @@
                                 </div>
                             </li>
                             <li class="timeline-inverted">
+                                <div class="timeline-badge yellow"><i class="fa fa-folder-open"></i>
+                                </div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
                                         <h4 class="timeline-title">数据抓取日志</h4>
@@ -315,7 +317,7 @@
                             </li>
 
                             <li class="timeline-inverted">
-                                <div class="timeline-badge success"><i class="fa fa-graduation-cap"></i>
+                                <div class="timeline-badge success"><i class="fa fa-folder-open"></i>
                                 </div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
@@ -540,14 +542,16 @@
                     </div>
                     <!-- /.panel-body -->
                     <div class="panel-footer">
+                        <form role="form" method="post" action="{{ url_for('message.message_deal') }}">
                         <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                            <input id="message" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." />
                             <span class="input-group-btn">
-                                <button class="btn btn-warning btn-sm" id="btn-chat">
+                                <button class="btn btn-warning btn-sm" id="btn-chat" type="submit">
                                     Send
                                 </button>
                             </span>
                         </div>
+                        </form>
                     </div>
                     <!-- /.panel-footer -->
                 </div>

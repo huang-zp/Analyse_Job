@@ -3,6 +3,7 @@ from sqlalchemy import Column, DateTime, Integer, Text, ARRAY
 from sqlalchemy import String, JSON
 from .base import Base, BaseColumns
 from datetime import datetime
+from app.utill.format import format_time
 
 
 class Job(Base, BaseColumns):
@@ -56,8 +57,11 @@ class Job(Base, BaseColumns):
     linestaion = Column(Text, server_default='')
 
     job_type = Column(String(50), server_default='')
-    time_sort = Column(String(50), server_default=datetime.now().strftime('%Y-%m-%d'), index=True)
+    time_sort = Column(String(50), default=format_time)
     avg_salary = Column(Integer(), index=True)
+
+    job_type_id = Column(Integer(), index= True)
+    city_id = Column(Integer(), index=True)
 
 
 

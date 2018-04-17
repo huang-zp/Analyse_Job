@@ -9,6 +9,6 @@ Base = declarative_base()
 class BaseColumns:
     id = Column(BigInteger(), primary_key=True, nullable=False,
                 autoincrement=True, unique=True)
-
-    crawl_time = Column(TIMESTAMP, server_default=func.now(), index=True)
+    create_time = Column(TIMESTAMP, server_default=func.now(), index=True)
+    update_time = Column(TIMESTAMP, server_default=func.now(), index=True)
 

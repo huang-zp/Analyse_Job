@@ -2,7 +2,7 @@ from app.engines import db
 from app.models import Job
 
 
-jobs = db.session.query(Job).order_by(Job.id).all()
+jobs = db.session.query(Job).order_by(Job.time_sort.desc()).limit(300000).all()
 
 for job in jobs:
     print(job.salary)

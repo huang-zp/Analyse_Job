@@ -166,15 +166,25 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
+                    {% if current_user.is_authenticated %}
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ current_user.name }}</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
+
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
+                    {% else %}
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="{{ url_for('auth.login') }}"><i class="fa fa-user fa-fw"></i> Login</a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <li><a href="{{ url_for('auth.register') }}"><i class="fa fa-sign-out fa-fw"></i> Register</a>
+                        </li>
+                    </ul>
+                    {% endif %}
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -183,35 +193,36 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
+
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
+                                <button class="btn btn-default" type="submit">
+                                    <a href="{{ url_for('data.data_lagou') }}"><i class="fa fa-search"></i></a>
                                 </button>
                             </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{ url_for('lagou.index') }}"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+                            <a href="{{ url_for('aj.index') }}"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 趋势分析<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url_for('lagou.job_count') }}">职位数量趋势</a>
+                                    <a href="{{ url_for('trend.job_count') }}">职位数量趋势</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.job_salary') }}">职位薪水趋势</a>
+                                    <a href="{{ url_for('trend.job_salary') }}">职位薪水趋势</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.area_count') }}">地区职位趋势</a>
+                                    <a href="{{ url_for('trend.area_count') }}">地区职位趋势</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.area_salary') }}">地区薪水趋势</a>
+                                    <a href="{{ url_for('trend.area_salary') }}">地区薪水趋势</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -220,54 +231,51 @@
                             <a href="#"><i class="fa fa-table fa-fw"></i> 数据管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url_for('lagou.data_lagou') }}">拉勾数据</a>
+                                    <a href="{{ url_for('data.data_lagou') }}">拉勾数据</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.data_lagou') }}">智联数据</a>
+                                    <a href="{{ url_for('data.data_zhilian') }}">智联数据</a>
                                 </li>
-                                <li>
-                                    <a href="{{ url_for('lagou.data_lagou') }}">猎聘数据</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url_for('lagou.data_lagou') }}">BOSS数据</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url_for('lagou.job_type') }}"><i class="fa fa-edit fa-fw"></i> 职位类型</a>
+                            <a href="{{ url_for('jobtype.job_type') }}"><i class="fa fa-edit fa-fw"></i> 职位类型</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> 公司分析<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url_for('lagou.company_salary') }}">平均薪水</a>
+                                    <a href="{{ url_for('company.company_salary') }}">平均薪水</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.company_welfare') }}">福利等级</a>
+                                    <a href="{{ url_for('company.company_welfare') }}">福利等级</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url_for('lagou.company_area') }}">地理区域</a>
+                                    <a href="{{ url_for('company.company_area') }}">地理区域</a>
                                 </li>
 
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        {% if current_user.role_id == 1 %}
                         <li>
-                            <a href="1.html"><i class="fa fa-sitemap fa-fw"></i> 数据日志</a>
+                            <a href="{{ url_for('datalog.log') }}"><i class="fa fa-sitemap fa-fw"></i> 数据日志</a>
 
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> 留言管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">留言过滤</a>
+                                    <a href="{{ url_for('message.message_pass') }}">留言过滤</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">留言拦截</a>
+                                    <a href="{{ url_for('message.message_stop') }}">留言拦截</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

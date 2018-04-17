@@ -51,84 +51,18 @@
                                         <tr>
                                             <th>序号</th>
                                             <th>公司名称</th>
-                                            <th>职位数量</th>
                                             <th>平均薪水</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        {% for high_company in high_companys %}
                                         <tr>
                                             <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
+                                            <td>{{ high_company.companyFullName }}</td>
+                                            <td class="center">{{ high_company.avg_salary }}元</td>
 
                                         </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
-
-                                        </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
-
-                                        </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
+                                    {% endfor %}
 
                                     </tbody>
                                 </table>
@@ -152,84 +86,20 @@
                                         <tr>
                                             <th>序号</th>
                                             <th>公司名称</th>
-                                            <th>职位数量</th>
+
                                             <th>平均薪水</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
+lower_companys                                        {% for lower_company in lower_companys %}
                                         <tr>
                                             <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
+                                            <td>{{ lower_company.companyFullName }}</td>
+                                            <td class="center">{{ lower_company.avg_salary }}元</td>
 
                                         </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
-
-                                        </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>杭州阿里巴巴</td>
-                                            <td>52</td>
-                                            <td class="center">20000元</td>
-
-                                        </tr>
-                                        <tr>
-        <td>1</td>
-        <td>杭州阿里巴巴</td>
-        <td>52</td>
-        <td class="center">20000元</td>
-
-    </tr>
+                                    {% endfor %}
 
                                     </tbody>
                                 </table>
@@ -266,24 +136,18 @@ Highcharts.chart('flot-line-chart', {
             },
             xAxis: {
                 categories: [
-                    '5>',
-                    '5',
-                    '6',
-                    '7',
-                    '8',
-                    '9',
-                    '10',
-                    '11',
-                    '12',
-                    '13',
-                    '14',
-                    '15',
-                    '16',
-                    '17',
-                    '18',
-                    '19',
-                    '20',
-                    '20<'
+                    '5k>',
+                    '5k-7k',
+                    '7k-9k',
+                    '9k-11k',
+                    '11k-13k',
+                    '13k-15k',
+                    '15k-17k',
+                    '17k-19k',
+                    '19k-21k',
+                    '21k-23k',
+                    '23k-25k',
+                    '25k<'
                 ],
                 crosshair: true
             },
@@ -296,7 +160,7 @@ Highcharts.chart('flot-line-chart', {
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.0f} 个</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -308,8 +172,12 @@ Highcharts.chart('flot-line-chart', {
                 }
             },
             series: [{
-                name: '薪资（k）',
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 60, 100, 80, 100, 90, 150]
+                name: '数量（个）',
+                data: [
+                    {% for salary in salarys %}
+                        {{ salary }},
+                    {% endfor %}
+                ]
 
             }]
         });

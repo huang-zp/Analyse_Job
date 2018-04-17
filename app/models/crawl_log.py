@@ -10,8 +10,8 @@ class CrawlLog(Base, BaseColumns):
     source = Column(String(50), server_default='')
     job_type = Column(String(50), server_default='')
     spend_time = Column(String(50), server_default='')
+    request_count = Column(String(50), server_default='')
     job_count = Column(String(50), server_default='')
-    workYear = Column(String(50), server_default='')
 
 
 

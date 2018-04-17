@@ -15,7 +15,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">拉勾数据</h1>
+                    <h1 class="page-header">智联数据</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -74,7 +74,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Python高薪岗位
+                            数据挖掘高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -89,12 +89,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for pythob_job in python_jobs %}
+                                    {% for datacrawl_job in datacrawl_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ pythob_job.positionName }}</td>
-                                            <td class="center">{{ pythob_job.salary }}</td>
-                                            <td>{{ pythob_job.companyFullName }}</td>
+                                            <td>{{ datacrawl_job.positionName }}</td>
+                                            <td class="center">{{ datacrawl_job.salary }}</td>
+                                            <td>{{ datacrawl_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -110,7 +110,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Java高薪岗位
+                            搜索算法高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -125,12 +125,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for java_job in java_jobs %}
+                                    {% for search_job in search_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ java_job.positionName }}</td>
-                                            <td class="center">{{ java_job.salary }}</td>
-                                            <td>{{ java_job.companyFullName }}</td>
+                                            <td>{{ search_job.positionName }}</td>
+                                            <td class="center">{{ search_job.salary }}</td>
+                                            <td>{{ search_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -146,7 +146,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            C++高薪岗位
+                            推荐算法高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -161,12 +161,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for c_plus_job in c_plus_jobs %}
+                                    {% for recommend_job in recommend_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ c_plus_job.positionName }}</td>
-                                            <td class="center">{{ c_plus_job.salary }}</td>
-                                            <td>{{ c_plus_job.companyFullName }}</td>
+                                            <td>{{ recommend_job.positionName }}</td>
+                                            <td class="center">{{ recommend_job.salary }}</td>
+                                            <td>{{ recommend_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -182,7 +182,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            C高薪岗位
+                            后端开发高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -197,12 +197,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for c_job in c_jobs %}
+                                    {% for backend_job in backend_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ c_job.positionName }}</td>
-                                            <td class="center">{{ c_job.salary }}</td>
-                                            <td>{{ c_job.companyFullName }}</td>
+                                            <td>{{ backend_job.positionName }}</td>
+                                            <td class="center">{{ backend_job.salary }}</td>
+                                            <td>{{ backend_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -218,7 +218,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            PHP高薪岗位
+                            全栈工程师高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -233,12 +233,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for php_job in php_jobs %}
+                                    {% for weball_job in weball_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ php_job.positionName }}</td>
-                                            <td class="center">{{ php_job.salary }}</td>
-                                            <td>{{ php_job.companyFullName }}</td>
+                                            <td>{{ weball_job.positionName }}</td>
+                                            <td class="center">{{ weball_job.salary }}</td>
+                                            <td>{{ weball_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -254,7 +254,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            C#高薪岗位
+                            web前端高薪岗位
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -269,12 +269,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {% for c_sharp_job in c_sharp_jobs %}
+                                    {% for webfront_job in webfront_jobs %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ c_sharp_job.positionName }}</td>
-                                            <td class="center">{{ c_sharp_job.salary }}</td>
-                                            <td>{{ c_sharp_job.companyFullName }}</td>
+                                            <td>{{ webfront_job.positionName }}</td>
+                                            <td class="center">{{ webfront_job.salary }}</td>
+                                            <td>{{ webfront_job.companyFullName }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

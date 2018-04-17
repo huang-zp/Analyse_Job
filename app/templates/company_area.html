@@ -55,78 +55,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        {% for dense_city in dense_citys %}
                                         <tr>
                                             <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
+                                            <td>{{ dense_city[1] }}</td>
+                                            <td>{{ dense_city[0] }}</td>
 
                                         </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>北京</td>
-                                            <td>500</td>
-
-
-                                        </tr>
+                                        {% endfor %}
 
                                     </tbody>
                                 </table>
@@ -155,79 +91,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        {% for sparse_city in sparse_citys %}
                                         <tr>
                                             <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
+                                            <td>{{ sparse_city[1] }}</td>
+                                            <td>{{ sparse_city[0] }}</td>
 
                                         </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>泉州</td>
-                                            <td>10</td>
-
-
-                                        </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -264,7 +135,11 @@ Highcharts.chart('flot-line-chart', {
             },
             xAxis: {
                 categories: [
-            '北京','上海','深圳','广州','杭州','成都','南京','武汉','西安','厦门','长沙','苏州','天津','重庆','郑州','青岛','合肥','福州','济南','大连','珠海','无锡','佛山','东莞','宁波','常州','沈阳','石家庄','昆明','南昌','南宁','哈尔滨','海口','中山','惠州','贵阳','长春','太原','嘉兴','泰安','昆山','烟台','兰州','泉州'
+
+                    {% for city in citys %}
+                        '{{ city[1] }}',
+                    {% endfor %}
+
 
                 ],
                 crosshair: true
@@ -278,7 +153,7 @@ Highcharts.chart('flot-line-chart', {
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.0f} 个</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -290,8 +165,10 @@ Highcharts.chart('flot-line-chart', {
                 }
             },
             series: [{
-                name: '薪资（k）',
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 60, 100, 80, 100, 90, 150,100, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 60, 100, 80, 100, 90, 150,100]
+                name: '公司数量（个）',
+                data: [                    {% for city in citys %}
+                        {{ city[0] }},
+                    {% endfor %}]
 
             }]
         });

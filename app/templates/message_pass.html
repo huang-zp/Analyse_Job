@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block page_css %}
+
+    <style type="text/css">
+        .highcharts-container {
+            margin: 0 auto;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block page_wrapper %}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">通过留言</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                {% for message in messages %}
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                           <button class="btn-default"> <a href="{{ url_for('message.message_delete_pass', message_id=message.id) }}" >删除</a></button>
+                        </div>
+                        <div class="panel-body">
+                            时间 : {{ message.create_time|string|truncate(19, True, '') }}
+                            <br>
+                            <br>
+                                {{ message.message }}
+
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+
+{% endblock %}
+
