@@ -57,7 +57,7 @@
                                     <tbody>
                                         {% for dense_city in dense_citys %}
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ loop.index }}</td>
                                             <td>{{ dense_city[1] }}</td>
                                             <td>{{ dense_city[0] }}</td>
 
@@ -93,7 +93,7 @@
                                     <tbody>
                                         {% for sparse_city in sparse_citys %}
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ loop.index }}</td>
                                             <td>{{ sparse_city[1] }}</td>
                                             <td>{{ sparse_city[0] }}</td>
 

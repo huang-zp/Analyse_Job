@@ -57,7 +57,7 @@
                                     <tbody>
                                         {% for high_company in high_companys %}
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ loop.index }}</td>
                                             <td>{{ high_company.companyFullName }}</td>
                                             <td class="center">{{ high_company.avg_salary }}元</td>
 
@@ -92,9 +92,9 @@
                                     </thead>
                                     <tbody>
 
-lower_companys                                        {% for lower_company in lower_companys %}
+                                        {% for lower_company in lower_companys %}
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ loop.index }}</td>
                                             <td>{{ lower_company.companyFullName }}</td>
                                             <td class="center">{{ lower_company.avg_salary }}元</td>
 

@@ -209,6 +209,7 @@
                         <li>
                             <a href="{{ url_for('aj.index') }}"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
                         </li>
+                        {% if current_user.is_authenticated %}
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 趋势分析<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -258,6 +259,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        {% endif %}
                         {% if current_user.role_id == 1 %}
                         <li>
                             <a href="{{ url_for('datalog.log') }}"><i class="fa fa-sitemap fa-fw"></i> 数据日志</a>
