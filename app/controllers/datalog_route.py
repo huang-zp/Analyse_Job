@@ -8,7 +8,7 @@ datalog = Blueprint('datalog', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@datalog.route('/datalog')
+@datalog.route('/datalog')    # 数据日志模块请求处理
 @login_required
 def log():
 

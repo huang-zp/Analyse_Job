@@ -3,6 +3,8 @@ import time
 from app.logger import ContextLogger
 from app.engines import db
 
+
+# 封装requests库, 封装一个更适合自己的请求规则
 class BaseReq:
     def __init__(self, is_crawl=True):
         self.ses = db.session

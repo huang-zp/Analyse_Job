@@ -10,6 +10,7 @@ SQLITE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(__file__))) + '/re
 SQLITE_URL = 'sqlite:///' + SQLITE_PATH
 
 
+# 封装sqlalchemy引擎实例， 分离出flask上下文
 class DBEngine:
 
     def __init__(self):
@@ -23,17 +24,4 @@ class DBEngine:
         return scoped_session(session_maker)
 
 
-class DBSqliteEngine:
-
-    def __init__(self):
-        self.engine = create_engine(SQLITE_URL, convert_unicode=True,
-                                    encoding='utf-8')
-        self.session = self.create_scoped_session()
-
-    def create_scoped_session(self):
-        session_maker = sessionmaker(bind=self.engine)
-        return scoped_session(session_maker)
-
-
 db = DBEngine()
-sqlite_db = DBSqliteEngine()

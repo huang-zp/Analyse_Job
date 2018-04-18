@@ -11,7 +11,7 @@ aj = Blueprint('aj', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@aj.route('/')
+@aj.route('/')   # 这个是主页请求处理， 但是数据是伪造的，最新数据还没出来，没办法显示上去，还得等几天
 def index():
     data = [22222, 12503, 17177, 19658, 17031, 19931, 17133, 4175]
 

@@ -1,5 +1,8 @@
 import os
 APP_PATH = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
+
+# 日志格式配置
 LOG_CONFIG = {
     'version': 1,
     'disable_existing_loggers': False,

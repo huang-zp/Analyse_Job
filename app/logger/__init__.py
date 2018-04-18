@@ -3,6 +3,7 @@ import logging.config
 import traceback
 
 
+# 封装日志实例
 class ContextLogger:
     USELESS_STACK = -3
 

@@ -15,7 +15,7 @@ trend = Blueprint('trend', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@trend.route('/trend/job/count')
+@trend.route('/trend/job/count')    # 职位数量趋势请求
 @cache.cached(timeout=43200)
 @login_required
 def job_count():
@@ -31,7 +31,7 @@ def job_count():
     return render_template('job_count_trend.html', job_names=job_names, year=year, month=month, day=day)
 
 
-@trend.route('/trend/job/salary')
+@trend.route('/trend/job/salary')   # 职位薪资趋势请求
 @cache.cached(timeout=43200)
 @login_required
 def job_salary():
@@ -50,7 +50,7 @@ def job_salary():
     return render_template('job_salary_trend.html', job_names=job_names, year=year, month=month, day=day)
 
 
-@trend.route('/trend/area/count')
+@trend.route('/trend/area/count')        # 地区职位数量请求
 @cache.cached(timeout=43200)
 @login_required
 def area_count():
@@ -66,7 +66,7 @@ def area_count():
     return render_template('city_count_trend.html', city_names=city_names, year=year, month=month, day=day)
 
 
-@trend.route('/trend/area/salary')
+@trend.route('/trend/area/salary')  # 地区职位薪资请求
 @cache.cached(timeout=43200)
 @login_required
 def area_salary():

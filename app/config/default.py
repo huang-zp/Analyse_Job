@@ -2,7 +2,7 @@
 import os
 
 
-class Config(object):
+class Config(object):   # 开发环境配置
     """Base config class."""
     # Flask app config
     DEBUG = True

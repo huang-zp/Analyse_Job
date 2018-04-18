@@ -12,6 +12,8 @@ now = datetime.now().strftime("%Y-%m-%d")
 end_time = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
 
 
+# 拉勾爬虫
+
 class CrawlFreebuf(Task):
     def __init__(self):
         super().__init__('LaGou数据爬取')

@@ -2,6 +2,8 @@ from app.engines import db
 from app.models import Job
 
 
+#  计算平均薪水
+
 jobs = db.session.query(Job).order_by(Job.time_sort.desc()).limit(300000).all()
 
 for job in jobs:

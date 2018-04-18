@@ -8,7 +8,7 @@ data = Blueprint('data', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@data.route('/data/lagou')
+@data.route('/data/lagou')    # 数据管理模块中拉勾数据请求处理
 @cache.cached(timeout=43200)
 @login_required
 def data_lagou():
@@ -27,7 +27,7 @@ def data_lagou():
                            c_plus_jobs=c_plus_jobs,c_jobs=c_jobs,php_jobs=php_jobs,c_sharp_jobs=c_sharp_jobs)
 
 
-@data.route('/data/zhilian')
+@data.route('/data/zhilian')    # 数据管理模块中拉勾数据请求处理
 @cache.cached(timeout=43200)
 @login_required
 def data_zhilian():

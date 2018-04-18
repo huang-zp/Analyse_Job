@@ -13,8 +13,7 @@ class LGBiz(BaseBiz):
 
     @property
     def fields(self):
-        return ['id', 'domain', 'ip', 'source', 'description', 'registrant',
-                'asn', 'reverselookup', 'crawl_time']
+        return []
 
     def query(self, **kwargs):
         query = self.ses.query(self.cls)

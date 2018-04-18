@@ -10,7 +10,7 @@ company = Blueprint('company', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@company.route('/company/welfare')
+@company.route('/company/welfare')   # 公司福利请求处理（这个没有用）
 @cache.cached(timeout=43200)
 @login_required
 def company_welfare():
@@ -18,7 +18,7 @@ def company_welfare():
     return render_template('company_welfare.html')
 
 
-@company.route('/company/area')
+@company.route('/company/area')    # 公司区域信息请求处理
 @cache.cached(timeout=43200)
 @login_required
 def company_area():
@@ -28,7 +28,7 @@ def company_area():
     return render_template('company_area.html', citys=citys, dense_citys=dense_citys, sparse_citys=sparse_citys)
 
 
-@company.route('/company/salary')
+@company.route('/company/salary')    # 公司薪水信息请求处理
 @cache.cached(timeout=43200)
 @login_required
 def company_salary():

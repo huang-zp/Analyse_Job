@@ -2,6 +2,8 @@
 import os
 
 
+# 配置导入函数
+
 def load_config():
     """Load config."""
     mode = os.environ.get('MODE')

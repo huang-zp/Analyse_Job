@@ -14,6 +14,9 @@ end_time = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
 FILE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(__file__))) + '/app/resources/' + 'index.txt'
 
 
+
+# 智联爬虫
+
 class CrawlZJ(Task):
     def __init__(self):
         super().__init__('智联招聘数据爬取')

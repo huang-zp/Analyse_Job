@@ -1,3 +1,4 @@
+# 基础异常定义
 class BaseError(Exception):
     def __init__(self, message='', code=400, **kwargs):
         self.code = code

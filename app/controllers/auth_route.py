@@ -7,7 +7,7 @@ auth = Blueprint('auth', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@auth.route('/login/user', methods=['POST', 'GET'])
+@auth.route('/login/user', methods=['POST', 'GET'])   # 用户登录请求处理
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -28,14 +28,14 @@ def login():
     return render_template('login.html')
 
 
-@auth.route('/logout', methods=['POST', 'GET'])
+@auth.route('/logout', methods=['POST', 'GET'])    # 用户登出请求处理
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
 
-@auth.route('/register', methods=['POST', 'GET'])
+@auth.route('/register', methods=['POST', 'GET'])     # 用户注册请求处理
 def register():
     if request.method == 'POST':
         name = request.form['name']

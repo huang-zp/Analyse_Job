@@ -10,11 +10,12 @@ jobtype = Blueprint('jobtype', __name__, url_prefix='')
 param_location = ('json', )
 
 
-@jobtype.route('/job/type')
+@jobtype.route('/job/type')   # 工作类型数据处理
 @cache.cached(timeout=43200)
 @login_required
 def job_type():
-    job_names = ['Python','Java','C++','PHP','数据挖掘','搜索算法','精准推荐','C','C#','.NET','Hadoop','Delphi','Ruby','Node.js','Go','ASP','后端开发其它','HTML5','Android','iOS','移动开发其它','web前端','Flash','JavaScript']
+    job_names = ['Python','Java','C++','PHP','数据挖掘','搜索算法','精准推荐','C','C#','.NET','Hadoop','Delphi','Ruby',
+                 'Node.js','Go','ASP','后端开发其它','HTML5','Android','iOS','移动开发其它','web前端','Flash','JavaScript']
 
     for i, job_name in enumerate(job_names):
         job_type=db.session.query(Job.positionName, func.count(), func.avg(Job.avg_salary)).filter_by(job_type=job_name)\

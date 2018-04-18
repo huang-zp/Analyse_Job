@@ -6,6 +6,8 @@ import base64
 __all__ = ['NaiveFilter', 'BSFilter', 'DFAFilter']
 
 
+# 过滤敏感词算法
+
 class NaiveFilter():
 
     def __init__(self):
