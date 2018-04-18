@@ -3,6 +3,7 @@ from app.engines import db
 from app.models import Job
 from sqlalchemy import func
 from flask_login import login_required
+from app.cache import cache
 
 
 company = Blueprint('company', __name__, url_prefix='')
@@ -10,6 +11,7 @@ param_location = ('json', )
 
 
 @company.route('/company/welfare')
+@cache.cached(timeout=43200)
 @login_required
 def company_welfare():
 
@@ -17,6 +19,7 @@ def company_welfare():
 
 
 @company.route('/company/area')
+@cache.cached(timeout=43200)
 @login_required
 def company_area():
     citys = db.session.query(func.count(), Job.city).group_by(Job.city).order_by(func.count().desc()).limit(40).all()
@@ -26,6 +29,7 @@ def company_area():
 
 
 @company.route('/company/salary')
+@cache.cached(timeout=43200)
 @login_required
 def company_salary():
     range_5 = db.session.query(Job).filter(Job.avg_salary < 5000).count()

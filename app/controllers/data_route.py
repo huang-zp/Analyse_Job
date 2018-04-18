@@ -2,12 +2,14 @@ from flask import Blueprint, render_template
 from app.engines import db
 from app.models import Job
 from flask_login import login_required
+from app.cache import cache
 
 data = Blueprint('data', __name__, url_prefix='')
 param_location = ('json', )
 
 
 @data.route('/data/lagou')
+@cache.cached(timeout=43200)
 @login_required
 def data_lagou():
 
@@ -26,6 +28,7 @@ def data_lagou():
 
 
 @data.route('/data/zhilian')
+@cache.cached(timeout=43200)
 @login_required
 def data_zhilian():
 
