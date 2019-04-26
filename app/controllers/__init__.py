@@ -6,3 +6,4 @@ from .jobtype_route import jobtype
 from .message_route import message
 from .trend_route import trend
 from .auth_route import auth
+from .recommend_route import recommend

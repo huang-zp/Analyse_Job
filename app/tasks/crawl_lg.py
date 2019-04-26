@@ -38,7 +38,7 @@ class CrawlFreebuf(Task):
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         }
 
-    def process(self, page, tag):
+    def process(self, page, tag): #抓取
 
         base_url = 'https://www.lagou.com/jobs/positionAjax.json?'
         params = {
@@ -68,7 +68,7 @@ class CrawlFreebuf(Task):
                 self.logger.warning(base_url)
         return False
 
-    def storage(self, job_dict, tag):
+    def storage(self, job_dict, tag): #存储
 
         for key in job_dict:
             job_dict[key] = self.switch_str(job_dict[key])

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block page_css %}
+
+    <style type="text/css">
+        .highcharts-container {
+            margin: 0 auto;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block page_wrapper %}
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">推荐职位</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>公司名称</th>
+                                            <th>职位名称</th>
+                                            <th>公司薪水</th>
+                                            <th>所在城市</th>
+                                            <th>学历</th>
+                                            <th>公司标签</th>
+                                            <th>公司福利</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for job in jobs %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ job.companyFullName }}</td>
+                                            <td>{{ job.salary }}</td>
+                                            <td>{{ job.positionName }}</td>
+                                            <td>{{ job.city }}</td>
+                                            <td>{{ job.education }}</td>
+                                            <td class="center">{{ job.companyLabelList }}</td>
+                                            <td>{{ job.positionAdvantage }}</td>
+                                        </tr>
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+{% endblock %}
+{% block static_js %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='highcharts/code/highcharts.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/series-label.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='highcharts/code/modules/exporting.js') }}" type="text/javascript"></script>
+
+    <script>
+Highcharts.chart('flot-line-chart', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '公司平均薪资分布表'
+            },
+            subtitle: {
+                text: 'Source: AJ平台'
+            },
+            xAxis: {
+                categories: [
+                    '5k>',
+                    '5k-7k',
+                    '7k-9k',
+                    '9k-11k',
+                    '11k-13k',
+                    '13k-15k',
+                    '15k-17k',
+                    '17k-19k',
+                    '19k-21k',
+                    '21k-23k',
+                    '23k-25k',
+                    '25k<'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '公司数量 (个)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.0f} 个</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '数量（个）',
+                data: [
+                    {% for salary in salarys %}
+                        {{ salary }},
+                    {% endfor %}
+                ]
+
+            }]
+        });
+
+
+
+
+
+    </script>
+{% endblock %}

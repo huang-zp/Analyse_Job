@@ -7,7 +7,7 @@ from logging.handlers import TimedRotatingFileHandler
 from app.models import User, Role
 from app.engines import db
 from flask import Flask, jsonify, request, g, json
-from app.controllers import company, message, datalog, data, aj, trend, jobtype, auth
+from app.controllers import company, message, datalog, data, aj, trend, jobtype, auth, recommend
 
 from flask_login import LoginManager
 from app.cache import cache
@@ -40,6 +40,7 @@ def create_app():
     app.register_blueprint(data)
     app.register_blueprint(datalog)
     app.register_blueprint(auth)
+    app.register_blueprint(recommend)
 
     cache.init_app(app)
 
