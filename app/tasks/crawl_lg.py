@@ -20,6 +20,8 @@ class CrawlFreebuf(Task):
         self.logger = ContextLogger('task_lagou')
         self.is_crawl = False
         self.end_time = db.session.query(Job).order_by(Job.createTime.desc()).first().createTime
+
+        # 模拟爬取的请求头信息
         self.headers = {
             'Host': 'www.lagou.com',
             'Upgrade - Insecure - Requests': '1',
@@ -38,9 +40,13 @@ class CrawlFreebuf(Task):
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         }
 
+    # 开始抓取
     def process(self, page, tag): #抓取
 
+        # 请求的拉勾接口
         base_url = 'https://www.lagou.com/jobs/positionAjax.json?'
+
+        # 请求求所带的参数
         params = {
             'px': 'new',
             'needAddtionalResult': 'false',
@@ -55,11 +61,13 @@ class CrawlFreebuf(Task):
 
         if html:
             try:
+                # 拿到接口返回的职位值
                 count = int(html['content']['positionResult']['resultSize'])
                 job_list = html['content']['positionResult']['result']
                 if count == 0:
                     return True
                 for job in job_list:
+                    # 调用存储函数将这个新返回的值进行存储
                     result = self.storage(job, tag)
                     if result:
                         return True
@@ -68,11 +76,11 @@ class CrawlFreebuf(Task):
                 self.logger.warning(base_url)
         return False
 
-    def storage(self, job_dict, tag): #存储
+    # 抓取好的信息进行存储
+    def storage(self, job_dict, tag):
 
         for key in job_dict:
             job_dict[key] = self.switch_str(job_dict[key])
-
 
         if job_dict['createTime'] <= self.end_time:
             return True
@@ -144,8 +152,11 @@ class CrawlFreebuf(Task):
             self.logger.warning('转化失败', e)
         return value_str
 
+    # 控制抓取页数、抓取什么职位
     def control(self):
         tag_list = []
+
+        # 读取需要抓取的职位
         with open(FILE_PATH, 'r') as f:
             for line in f:
                 tag_list.append(line.strip())

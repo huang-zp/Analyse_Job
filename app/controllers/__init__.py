@@ -7,3 +7,4 @@ from .message_route import message
 from .trend_route import trend
 from .auth_route import auth
 from .recommend_route import recommend
+from .user_route import user_operate

@@ -24,4 +24,5 @@ class DBEngine:
         return scoped_session(session_maker)
 
 
+# 就可以根据db进行操作数据库
 db = DBEngine()

@@ -57,7 +57,7 @@ class Job(Base, BaseColumns):
     linestaion = Column(Text, server_default='')
 
     job_type = Column(String(50), server_default='')  # 工作类型（比如 Python）
-    time_sort = Column(String(50), default=format_time)  # 格式化时间（比如 2018-04-17）
+    time_sort = Column(String(50), default=format_time)  # 格式化时间（比如 2019-04-17）
     avg_salary = Column(Integer(), index=True)   # 平均薪水
 
     job_type_id = Column(Integer(), index= True)   # 工作类型id （比如 1代表python）

@@ -5,6 +5,7 @@ from app.exceptions import ResourceNotFound, ParamError
 from app.models import ZlJob
 
 
+# 这是智联数据的增删查改类 继承基础的增删查改类
 class ZLBiz(BaseBiz):
 
     @property

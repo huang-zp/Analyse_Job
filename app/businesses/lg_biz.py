@@ -5,6 +5,7 @@ from app.exceptions import ResourceNotFound, ParamError
 from app.models import Job
 
 
+# 这是拉勾数据的增删查改类 继承基础的增删查改类
 class LGBiz(BaseBiz):
 
     @property
@@ -25,6 +26,7 @@ class LGBiz(BaseBiz):
                 query = query.filter(getattr(self.cls, attr).like('%' + condition[attr] + '%'))
         return query
 
+    # 这是查找单个职位详细信息的函数
     def query_details(self, domain_id):
         domain = self.ses.query(Job).filter_by(id=domain_id).first()
         if not domain:

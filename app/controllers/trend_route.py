@@ -23,11 +23,14 @@ def job_count():
 
     for i, job_name in enumerate(job_names):
 
+        # 查找各职位数量近七天的值
         values = db.session.query(func.count()).filter(Job.job_type==job_name).order_by(Job.time_sort.desc()).group_by(Job.time_sort).limit(7).all()
         for j, value in enumerate(values):
             values[j] = value[0]
 
         job_names[i] = [job_name, values]
+
+        # 将各职位数量近七天的值返回前端
     return render_template('job_count_trend.html', job_names=job_names, year=year, month=month, day=day)
 
 
@@ -39,6 +42,7 @@ def job_salary():
 
     for i, job_name in enumerate(job_names):
 
+        # 查找各职位平均薪资近七天的值
         values = db.session.query(func.avg(Job.avg_salary)).filter(Job.job_type==job_name).order_by(Job.time_sort.desc()).group_by(Job.time_sort).limit(7).all()
         for j, value in enumerate(values):
             if value[0] is None:
@@ -47,6 +51,7 @@ def job_salary():
             values[j] = int(value[0])
         job_names[i] = [job_name, values]
 
+        # 将各职位平均薪资近七天的值返回前端
     return render_template('job_salary_trend.html', job_names=job_names, year=year, month=month, day=day)
 
 
@@ -58,6 +63,7 @@ def area_count():
 
     for i, city_name in enumerate(city_names):
 
+        # 查找各地区职位数量近七天的值
         values = db.session.query(func.count()).filter(Job.city==city_name).order_by(Job.time_sort.desc()).group_by(Job.time_sort).limit(7).all()
         for j, value in enumerate(values):
             values[j] = int(value[0])
@@ -74,6 +80,7 @@ def area_salary():
 
     for i, city_name in enumerate(city_names):
 
+        # 查找各地区职位近七天平均薪资的值
         values = db.session.query(func.avg(Job.avg_salary)).filter(Job.city==city_name).order_by(Job.time_sort.desc()).group_by(Job.time_sort).limit(7).all()
         for j, value in enumerate(values):
             if value[0] is None:

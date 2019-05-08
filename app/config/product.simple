@@ -1,9 +1,0 @@
-# coding: utf-8
-from .default import Config
-
-
-class ProductionConfig(Config):   #  生成环境配置模板
-    # App config
-    DEBUG = False
-    SQLALCHEMY_DATABASE_URI = "postgres://postgres:postgres@127.0.0.1/analyse_job"
-    SQLALCHEMY_TRACK_MODIFICATIONS = False

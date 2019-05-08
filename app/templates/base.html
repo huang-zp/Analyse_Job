@@ -1,218 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    {% block head %}
+    <head>
+            {% block head %}
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <title>Clearmin数据分析推荐平台</title>
+            {% endblock %}
 
-        <title>职位动态搜集与分析平台</title>
-
+        {% block static_css %}
 
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    {% endblock %}
-
-    {% block static_css %}
-        <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='dist/css/sb-admin-2.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='vendor/morrisjs/morris.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
-    {% endblock %}
-
-{% block page_css %}
-
-{% endblock %}
-
-</head>
+            <link href="{{ url_for('static', filename='assets/css/bootstrap-clearmin.min.css') }}" rel="stylesheet">
+            <link href="{{ url_for('static', filename='assets/css/roboto.css') }}" rel="stylesheet">
+            <link href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}" rel="stylesheet">
+            <link href="{{ url_for('static', filename='assets/css/material-design.css') }}" rel="stylesheet">
+            <link href="{{ url_for('static', filename='assets/css/small-n-flat.css') }}" rel="stylesheet">
 
 
-<body>
+        {% endblock %}
 
-    <div id="wrapper">
-    {% block navigation %}
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">职位动态搜集与分析平台</a>
-            </div>
-            <!-- /.navbar-header -->
+    </head>
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-comment fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>数据挖掘被描述为“从数据之中提取隐含的，先前未知的，潜在有用信息的非凡过程”...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>数据挖掘被描述为“从数据之中提取隐含的，先前未知的，潜在有用信息的非凡过程”...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>数据挖掘被描述为“从数据之中提取隐含的，先前未知的，潜在有用信息的非凡过程”...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
 
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    {% if current_user.is_authenticated %}
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ current_user.name }}</a>
-                        </li>
-
-                        <li class="divider"></li>
-                        <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    {% else %}
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{{ url_for('auth.login') }}"><i class="fa fa-user fa-fw"></i> Login</a>
-                        </li>
-
-                        <li class="divider"></li>
-                        <li><a href="{{ url_for('auth.register') }}"><i class="fa fa-sign-out fa-fw"></i> Register</a>
-                        </li>
-                    </ul>
-                    {% endif %}
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <a href="{{ url_for('data.data_lagou') }}"><i class="fa fa-search"></i></a>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="{{ url_for('aj.index') }}"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+    <body     {% block navbar %} class="cm-no-transition cm-1-navbar" {% endblock %}>
+        {% block menu %}
+            <div id="cm-menu">
+            <nav class="cm-navbar cm-navbar-primary">
+                <div class="cm-flex"><a href="index.html" class="cm-logo"></a></div>
+                <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+            </nav>
+            <div id="cm-menu-content">
+                <div id="cm-menu-items-wrapper">
+                    <div id="cm-menu-scroller">
+                        <ul class="cm-menu-items">
+                       <li>
+                            <a href="{{ url_for('aj.index') }}" class="sf-house"> 控制面板</a>
                         </li>
                         {% if current_user.is_authenticated %}
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 趋势分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+
+                        <li class="cm-submenu">
+                        <a class="sf-dashboard">趋势分析 <span class="caret"></span></a>
+                            <ul>
                                 <li>
                                     <a href="{{ url_for('trend.job_count') }}">职位数量趋势</a>
                                 </li>
@@ -228,9 +56,9 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> 数据管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                        <li class="cm-submenu">
+                            <a class="sf-brick">数据管理 <span class="caret"></span></a>
+                            <ul>
                                 <li>
                                     <a href="{{ url_for('data.data_lagou') }}">拉勾数据</a>
                                 </li>
@@ -241,14 +69,16 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url_for('jobtype.job_type') }}"><i class="fa fa-edit fa-fw"></i> 职位类型</a>
+                            <a href="{{ url_for('jobtype.job_type') }}" class="sf-window-layout"> 职位类型</a>
                         </li>
+
+
                                                     <li>
-                            <a href="{{ url_for('recommend.recommend_index') }}"><i class="fa fa-edit fa-fw"></i> 职位推荐</a>
+                            <a href="{{ url_for('recommend.recommend_index') }}" class="sf-cat"> 职位推荐</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 公司分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                        <li class="cm-submenu">
+                            <a class="sf-notepad">公司分析 <span class="caret"></span></a>
+                            <ul>
                                 <li>
                                     <a href="{{ url_for('company.company_salary') }}">平均薪水</a>
                                 </li>
@@ -265,11 +95,11 @@
                         {% endif %}
                         {% if current_user.role_id == 1 %}
                         <li>
-                            <a href="{{ url_for('datalog.log') }}"><i class="fa fa-sitemap fa-fw"></i> 数据日志</a>
+                            <a href="{{ url_for('datalog.log') }}" class="sf-lock-open">数据日志</a>
 
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> 留言管理<span class="fa arrow"></span></a>
+                        <li class="cm-submenu">
+                        <a class="sf-news">留言管理 <span class="caret"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url_for('message.message_pass') }}">留言过滤</a>
@@ -280,33 +110,236 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                                                                                <li>
+                            <a href="{{ url_for('user_operate.user_list') }}" class="sf-user-male"> 用户管理</a>
+                        </li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+
+        {% block header %}
+            <header id="cm-header">
+            <nav class="cm-navbar cm-navbar-primary">
+                <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+                <div class="cm-flex">
+                    {% block title %}
+                    <h1>Home</h1>
+                        {% endblock %}
+                    <form id="cm-search" action="index.html" method="get">
+                        <input type="search" name="q" autocomplete="off" placeholder="Search...">
+                    </form>
+                </div>
+                <div class="pull-right">
+                    <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
+                </div>
+
+                <div class="dropdown pull-right">
+                    <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+
+                        {% if current_user.is_authenticated %}
+                        <li class="disabled text-center">
+                            <a style="cursor:default;"><strong>{{ current_user.name }}</strong></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('auth.logout') }}"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                        </li>
+                        {% else %}
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ url_for('auth.register') }}"><i class="fa fa-fw fa-download"></i> Register</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('auth.login') }}"><i class="fa fa-fw fa-sign-out"></i> Sign in</a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
+            </nav>
+        </header>
+        {% endblock %}
+
+
+        {% block global %}
+        <div id="global">
+            <div class="container-fluid cm-container-white">
+                <h2 style="margin-top:0;">Welcome to Clearmin template demo !</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.</p>
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-    {% endblock %}
+            <div class="container-fluid">
+                <div class="row cm-fix-height">
+                    <div class="col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="assets/img/sass-less.png" alt="Less support" class="img-responsive">
+                                <br>
+                                <p>Clearmin ships with vanilla CSS, but its source code utilizes Less CSS preprocessor. Quickly get started with precompiled CSS or build on the source. Colors and sizes are easily customizable with less variables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="assets/img/devices.png" alt="Responsive across devices" class="img-responsive">
+                                <br>
+                                <p>Clearmin easily and efficiently scales your websites and applications with a single code base, from phones to tablets to desktops with CSS media queries. Swipe from left on phones to toggle main menu.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="assets/img/components.png" alt="Components" class="img-responsive">
+                                <br>
+                                <p>With Bootstrap, you get extensive and beautiful documentation for common HTML elements, dozens of custom HTML and CSS components, and awesome jQuery plugins.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cm-fix-height">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="dashboard-sales.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/dashboard.svg" alt="dashboard">
+                                </span>
+                                <h4>Dashboard</h4> <small>C3.js charts to display some fancy pies.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="notepad.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/notepad.svg" alt="notepad">
+                                </span>
+                                <h4>Text editor</h4> <small>Summernote WYSIWYG Editor implementation.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="components-text.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/brick.svg" alt="brick">
+                                </span>
+                                <h4>Components</h4> <small>Bootstrap main classes.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="layouts-breadcrumb1.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/window-layout.svg" alt="window-layout">
+                                </span>
+                                <h4>Navbar layouts</h4> <small>Put all you need on the top of your screen.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="ico-sf.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/cat.svg" alt="cat">
+                                </span>
+                                <h4>Icons</h4> <small>Semantic little pics.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <a href="login.html" class="panel panel-default thumbnail cm-thumbnail">
+                            <div class="panel-body text-center">
+                                <span class="svg-48">
+                                    <img src="assets/img/sf/lock-open.svg" alt="lock-open">
+                                </span>
+                                <h4>Login page</h4> <small>Have a look to the login page.</small>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Check our fancy colors</div>
+                    <div class="panel-body" id="demo-buttons">
+                        <p>Click buttons below to change navbar main color :</p>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-primary" data-switch-color="primary">primary</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-success" data-switch-color="success">success</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-info" data-switch-color="info">info</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-warning" data-switch-color="warning">warning</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-danger" data-switch-color="danger">danger</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-gray" data-switch-color="gray">gray</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-yellow" data-switch-color="yellow">yellow</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-purple" data-switch-color="purple">purple</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-turquoise" data-switch-color="turquoise">turquoise</button>
+                                <br>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <button class="btn btn-block btn-midnight" data-switch-color="midnight">midnight</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="cm-footer"><span class="pull-left">Connected as John Smith</span><span class="pull-right">&copy; PAOMEDIA SARL</span></footer>
+        </div>
+        {% endblock %}
 
 
-    {% block page_wrapper %}
+        {% block static_js %}
 
-    {% endblock %}
-    </div>
-    <!-- /#wrapper -->
+                <script src="{{ url_for('static', filename='assets/js/lib/jquery-2.1.3.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/jquery.mousewheel.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/jquery.cookie.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/fastclick.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/clearmin.min.js') }}" type="text/javascript"></script>
+                <script src="{{ url_for('static', filename='assets/js/demo/home.js') }}" type="text/javascript"></script>
+        {% endblock %}
 
 
-    {% block static_js %}
-
-    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='vendor/metisMenu/metisMenu.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='vendor/raphael/raphael.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='vendor/morrisjs/morris.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='dist/js/sb-admin-2.js') }}" type="text/javascript"></script>
-
-    {% endblock %}
-</body>
-
+    </body>
 </html>

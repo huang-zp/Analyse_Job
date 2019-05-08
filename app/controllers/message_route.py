@@ -11,8 +11,10 @@ param_location = ('json', )
 @message.route('/message/pass')  # 处理留言通过请求
 @login_required
 def message_pass():
+    # 将通过的留言进行查询操作
     messages = db.session.query(Message).filter_by(pass_code=1).order_by(Message.id.desc()).limit(30).all()
 
+    # 将通过的留言返回前端进行展示
     return render_template('message_pass.html', messages=messages)
 
 
@@ -29,6 +31,8 @@ def message_stop():
 def message_deal():
     if request.method == 'POST':
         message = request.form['message']
+
+        # 这个就是敏感词过滤，能通过的话pass_code是1，不能是0
         if gfw.filter(message):
             new_message = Message()
             new_message.message = message
@@ -43,17 +47,20 @@ def message_deal():
     return redirect(url_for('aj.index'))
 
 
-@message.route('/message/delete/pass/<int:message_id>', methods=['GET'])     # 通过信息删除请求
+@message.route('/message/delete/pass/<int:message_id>', methods=['GET'])     # 通过信息的删除请求
 @login_required
 def message_delete_pass(message_id):
+
+    # 根据留言id查找出来需要删除的留言进行删除
     db.session.query(Message).filter_by(id=message_id).delete()
     db.session.commit()
     return redirect(url_for('message.message_pass'))
 
 
-@message.route('/message/delete/stop/<int:message_id>', methods=['GET'])      # 拦截信息删除请求
+@message.route('/message/delete/stop/<int:message_id>', methods=['GET'])      # 拦截信息的删除请求
 @login_required
 def message_delete_stop(message_id):
+    # 根据留言id查找出来需要删除的留言进行删除
     db.session.query(Message).filter_by(id=message_id).delete()
     db.session.commit()
     return redirect(url_for('message.message_stop'))

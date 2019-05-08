@@ -4,7 +4,9 @@ from app.engines import db
 from app.logger import ContextLogger
 from app.utill.req import BaseReq
 
-
+# 基础的任务类
+# 含有比如开始时间记录，结束时间记录，安全提交等函数
+# 这样其他的任务继承这个基础任务就不同定义以上函数了
 class Task(BaseReq):
     def __init__(self, name, time=None):
         super().__init__()

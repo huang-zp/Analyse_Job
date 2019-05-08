@@ -8,5 +8,7 @@ migrate = Migrate(app, Base)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
+
+# 项目启动
 if __name__ == "__main__":
     manager.run()

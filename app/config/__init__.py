@@ -2,8 +2,7 @@
 import os
 
 
-# 配置导入函数
-
+# 配置导入函数， 根据不同的生产环境导出不同的配置
 def load_config():
     """Load config."""
     mode = os.environ.get('MODE')

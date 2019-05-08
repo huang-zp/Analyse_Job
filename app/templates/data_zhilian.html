@@ -6,19 +6,17 @@
         <link href="{{ url_for('static', filename='vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
 
 {% endblock %}
+                    {% block title %}
+                    <h1>智联数据</h1>
+                        {% endblock %}
+{% block global %}
 
-{% block page_wrapper %}
 
 
 
+        <div id="global">
+                           <div class="container-fluid">
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">智联数据</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -38,7 +36,7 @@
                                         <th>地点</th>
                                         <th>公司</th>
                                         <th>公司类型</th>
-                                        <th>更新时间</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +50,7 @@
                                         <td class="center">{{ job.city }}</td>
                                         <td>{{ job.companyFullName }}</td>
                                         <td class="center">{{ job.industryField }}</td>
-                                        <td class="center">{{ job.createTime }}</td>
+
                                     </tr>
                                 {% endfor %}
 
